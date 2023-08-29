@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar';
 import PokemonCard from '../components/PokemonCard';
 import { Skeletons } from '../components/Skeletons';
 
+
 export const Home = () => {
     const [pokemons, setPokemons] = useState([]);
 
@@ -20,10 +21,9 @@ export const Home = () => {
         }
         axios.all(endPoints.map((endPoint) => axios.get(endPoint))).then((res) => setPokemons(res));
     };
-
     const pokemonFilter = (name) => {
         var filteredPokemons = [];
-        if (name == "") {
+        if (name === "") {
             getPokemons()
         }
         for (var i in pokemons) {
@@ -34,15 +34,23 @@ export const Home = () => {
         setPokemons(filteredPokemons);
     };
 
+    function capitalizeFirstLetter(text) {
+        return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+
     return (
         <div>
             <Navbar pokemonFilter={pokemonFilter} />
-            <Container maxWidth="xg">
+            <Container maxWidth="xl">
                 <Grid container spacing={2}>
                     {pokemons.length === 0 ? (<Skeletons />) : (
                         pokemons.map((pokemon, key) => (
                             <Grid item xs={12} sm={6} md={4} lg={2} key={key}>
-                                <PokemonCard name={pokemon.data.name} image={pokemon.data.sprites.front_default} types={pokemon.data.types} />
+                                <PokemonCard
+                                    name={capitalizeFirstLetter(pokemon.data.name)}
+                                    image={pokemon.data.sprites.other.dream_world.front_default}
+                                    types={pokemon.data.types}
+                                />
                             </Grid>
                         ))
                     )}
