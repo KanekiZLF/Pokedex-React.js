@@ -9,7 +9,7 @@ import { Skeletons } from '../components/Skeletons';
 
 export const Home = () => {
     const [pokemons, setPokemons] = useState([]);
-
+    
     useEffect(() => {
         getPokemons()
     }, []);
@@ -21,6 +21,10 @@ export const Home = () => {
         }
         axios.all(endPoints.map((endPoint) => axios.get(endPoint))).then((res) => setPokemons(res));
     };
+
+
+
+
     const pokemonFilter = (name) => {
         var filteredPokemons = [];
         if (name === "") {
@@ -33,7 +37,7 @@ export const Home = () => {
         }
         setPokemons(filteredPokemons);
     };
-
+    
     function capitalizeFirstLetter(text) {
         return text.charAt(0).toUpperCase() + text.slice(1);
     }
