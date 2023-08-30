@@ -57,7 +57,7 @@ export default function Navbar({ pokemonFilter }) {
             <AppBar position="static" sx={{ backgroundColor: "black" }}>
                 <Toolbar>
                     <Box display="flex" justifyContent="space-between" width="100%">
-                        <Box component="img" src="Pokedex-React.js/assets/pokemon-logo.png" height="2.5em" />
+                        <Box component="img" src="assets/pokemon-logo.png" height="2.5em" />
                         <Search onChange={(e) => pokemonFilter(e.target.value.toLowerCase())}>
                             <SearchIconWrapper>
                                 <SearchIcon />
