@@ -1,3 +1,24 @@
+:root {
+    --grass: #5FBD58;
+    --bug: #92BC2C;
+    --dark: #595761;
+    --dragon: #0C69C8;
+    --electric: #F2D94E;
+    --fairy: #EE90E6;
+    --fighting: #D3425F;
+    --fire: #dc872f;
+    --flying: #A1BBEC;
+    --ghost: #5F6DBC;
+    --ground: #DA7C4D;
+    --ice: #75D0C1;
+    --normal: #A0A29F;
+    --poison: #B763CF;
+    --psychic: #ff2ca8;
+    --rock: #a38c21;
+    --steel: #5695A3;
+    --water: #539DDF;
+}
+
 .imageContainer {
     height: 150px;
     width: 150px;
@@ -62,92 +83,153 @@
     margin: 20%;
 }
 
+.grass {
+    background: var(--grass);
+    box-shadow: 0 0 20px var(--grass);
+}
+
 .bug {
-    background: #92BC2C;
-    box-shadow: 0 0 20px #92BC2C;
+    background: var(--bug);
+    box-shadow: 0 0 20px var(--bug);
 }
 
 .dark {
-    background: #595761;
-    box-shadow: 0 0 20px #595761;
+    background: var(--dark);
+    box-shadow: 0 0 20px var(--dark);
 }
 
 .dragon {
-    background: #0C69C8;
-    box-shadow: 0 0 20px #0C69C8;
+    background: var(--dragon);
+    box-shadow: 0 0 20px var(--dragon);
 }
 
 .electric {
-    background: #F2D94E;
-    box-shadow: 0 0 20px #F2D94E;
-}
-
-.fire {
-    background: #FBA54C;
-    box-shadow: 0 0 20px #FBA54C;
+    background: var(--electric);
+    box-shadow: 0 0 20px #796d26;
 }
 
 .fairy {
-    background: #EE90E6;
-    box-shadow: 0 0 20px #EE90E6;
+    background: var(--fairy);
+    box-shadow: 0 0 20px var(--fairy);
 }
 
 .fighting {
-    background: #D3425F;
-    box-shadow: 0 0 20px #D3425F;
+    background: var(--fighting);
+    box-shadow: 0 0 20px var(--fighting);
 }
 
 .flying {
-    background: #A1BBEC;
-    box-shadow: 0 0 20px #A1BBEC;
+    background: var(--flying);
+    box-shadow: 0 0 20px var(--flying);
 }
 
 .ghost {
-    background: #5F6DBC;
-    box-shadow: 0 0 20px #5F6DBC;
-}
-
-.grass {
-    background: #5FBD58;
-    box-shadow: 0 0 20px #5FBD58;
+    background: var(--ghost);
+    box-shadow: 0 0 20px var(--ghost);
 }
 
 .ground {
-    background: #DA7C4D;
-    box-shadow: 0 0 20px #DA7C4D;
+    background: var(--ground);
+    box-shadow: 0 0 20px var(--ground);
 }
 
 .ice {
-    background: #75D0C1;
-    box-shadow: 0 0 20px #75D0C1;
+    background: var(--ice);
+    box-shadow: 0 0 20px var(--ice);
 }
 
 .normal {
-    background: #A0A29F;
-    box-shadow: 0 0 20px #A0A29F;
+    background: var(--normal);
+    box-shadow: 0 0 20px var(--normal);
 }
 
 .poison {
-    background: #B763CF;
-    box-shadow: 0 0 20px #B763CF;
+    background: var(--poison);
+    box-shadow: 0 0 20px var(--poison);
 }
 
 .psychic {
-    background: #FA8581;
-    box-shadow: 0 0 20px #FA8581;
+    background: var(--psychic);
+    box-shadow: 0 0 20px var(--psychic);
 }
 
 .rock {
-    background: #C9BB8A;
-    box-shadow: 0 0 20px #C9BB8A;
+    background: var(--rock);
+    box-shadow: 0 0 20px var(--rock);
 }
 
 .steel {
-    background: #5695A3;
-    box-shadow: 0 0 20px #5695A3;
+    background: var(--steel);
+    box-shadow: 0 0 20px var(--steel);
 }
 
 .water {
-    background: #539DDF;
-    box-shadow: 0 0 20px #539DDF;
+    background: var(--water);
+    box-shadow: 0 0 20px var(--water);
+}
+
+.fire {
+    background: var(--fire);
+    box-shadow: 0 0 20px var(--fire);
+}
+
+.pokeType {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    grid-gap: 0 10px;
+    grid-gap: 0 20px;
+    gap: 0 20px;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.pokeTypeBg>img {
+    width: 20px;
+    height: 20px;
+}
+
+.pokeTypeBg {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    align-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+/* Estilize o tooltip */
+.pokeTypeInfo {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Estilize o texto do tooltip */
+.pokeTypeInfo .pokeTypeText {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Exiba o tooltip quando passar o mouse sobre o elemento pai */
+.pokeTypeInfo:hover .pokeTypeText {
+    visibility: visible;
+    opacity: 1;
 }

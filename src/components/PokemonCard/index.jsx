@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import { Box, Button, CardActionArea, CardActions } from '@mui/material';
 import '../../styles/Pokemon.css';
 
-
 export default function PokemonCard({ name, image, types }) {
 
     const typeHandler = () => {
@@ -117,6 +116,17 @@ export default function PokemonCard({ name, image, types }) {
         return typeName;
     };
 
+    const getTypeImage = (type) => {
+        const imagePath = `${process.env.PUBLIC_URL}/assets/icons/${type}.png`;
+
+        return (
+            <div className={`pokeTypeBg pokeTypeInfo ${type}`}>
+                <img src={imagePath} alt={type} />
+                <span className="pokeTypeText">{typeHandler()}</span>
+            </div>
+        );
+    };
+
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
@@ -131,12 +141,20 @@ export default function PokemonCard({ name, image, types }) {
                     </div>
                 </div>
                 <CardContent className='pokemonName'>
-                    <Typography gutterBottom variant="h5" component="div" align="center">
-                        {name}
-                    </Typography>
-                    <Typography gutterBottom variant="h6" component="div" align="center">
-                        {typeHandler()}
-                    </Typography>
+                    <Box>
+                        <Typography gutterBottom variant="h5" component="div" align="center">
+                            {name}
+                        </Typography>
+                        <Typography gutterBottom variant="h6" component="div" align="center">
+                            <div className="pokeType">
+                                {types.map((type) => (
+                                    <div key={type.type.name} className={`pokeTypeBg ${type.type.name}`}>
+                                        {getTypeImage(type.type.name)}
+                                    </div>
+                                ))}
+                            </div>
+                        </Typography>
+                    </Box>
                     {/* <Typography variant="body2" color="text.secondary">
                         Lizards are a widespread group of squamate reptiles, with over 6,000
                         species, ranging across all continents except Antarctica
