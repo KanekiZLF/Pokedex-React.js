@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -8,121 +8,61 @@ import '../../styles/Pokemon.css';
 
 export default function PokemonCard({ name, image, types }) {
 
-    const typeHandler = () => {
-        let typeName;
-        let typeName1;
+    const getTypeImage = (type) => {
+        const imagePath = `${process.env.PUBLIC_URL}/assets/icons/${type}.png`;
 
-        switch (types[0].type.name) {
+        // Defina os textos específicos para cada tipo com base em pokeTypeInfo
+        let spanText;
+        switch (type) {
             default:
-                typeName = "Erro";
+                spanText = "Erro";
                 break;
 
             case "bug":
-                typeName = "Terrestre";
+                spanText = "Terrestre";
                 break;
 
             case "grass":
-                typeName = "Grama";
+                spanText = "Grama";
                 break;
 
             case "poison":
-                typeName = "Veneno";
+                spanText = "Veneno";
                 break;
 
             case "fire":
-                typeName = "Fogo";
+                spanText = "Fogo";
                 break;
 
             case "water":
-                typeName = "Água";
+                spanText = "Água";
                 break;
 
             case "normal":
-                typeName = "Normal";
+                spanText = "Normal";
                 break;
 
             case "flying":
-                typeName = "Voador";
+                spanText = "Voador";
                 break;
 
             case "electric":
-                typeName = "Elétrico";
+                spanText = "Elétrico";
                 break;
 
             case "ground":
-                typeName = "Terrestre";
+                spanText = "Terrestre";
                 break;
 
             case "fairy":
-                typeName = "Fada";
+                spanText = "Fada";
                 break;
         }
-
-
-        if (types[1]) {
-            switch (types[1].type.name) {
-                default:
-                    typeName = "Erro";
-                    break;
-
-                case "bug":
-                    typeName1 = "Inseto";
-
-                    break;
-
-                case "grass":
-                    typeName1 = "Grama";
-                    break;
-
-                case "poison":
-                    typeName1 = "Veneno";
-                    break;
-
-                case "fire":
-                    typeName1 = "Fogo";
-                    break;
-
-                case "water":
-                    typeName1 = "Água";
-                    break;
-
-                case "normal":
-                    typeName1 = "Normal";
-                    break;
-
-                case "flying":
-                    typeName1 = "Voador";
-                    break;
-
-                case "electric":
-                    typeName1 = "Elétrico";
-                    break;
-
-                case "ground":
-                    typeName1 = "Terrestre";
-                    break;
-
-                case "fairy":
-                    typeName1 = "Fada";
-                    break;
-            }
-        }
-
-        //console.log(types[0].type.name)
-
-        if (types[1]) {
-            return typeName + " | " + typeName1;
-        }
-        return typeName;
-    };
-
-    const getTypeImage = (type) => {
-        const imagePath = `${process.env.PUBLIC_URL}/assets/icons/${type}.png`;
 
         return (
             <div className={`pokeTypeBg pokeTypeInfo ${type}`}>
                 <img src={imagePath} alt={type} />
-                <span className="pokeTypeText">{typeHandler()}</span>
+                <span className="pokeTypeText">{spanText}</span>
             </div>
         );
     };

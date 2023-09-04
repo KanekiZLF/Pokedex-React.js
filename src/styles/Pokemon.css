@@ -213,7 +213,7 @@
 /* Estilize o texto do tooltip */
 .pokeTypeInfo .pokeTypeText {
     visibility: hidden;
-    width: 120px;
+    width: 70px;
     background-color: #333;
     color: #fff;
     text-align: center;
@@ -221,11 +221,13 @@
     padding: 5px;
     position: absolute;
     z-index: 1;
-    bottom: 125%;
+    bottom: 120%;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
     transition: opacity 0.3s;
+    font-size: 16px;
+    font-family: sans-serif;
 }
 
 /* Exiba o tooltip quando passar o mouse sobre o elemento pai */
