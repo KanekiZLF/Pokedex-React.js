@@ -1,0 +1,74 @@
+.modalPokemon {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    z-index: 1000;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modalButton {
+    display: flex;
+    align-items: center;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modalContainerPokeImg {
+    display: flex;
+    object-fit: contain;
+    width: 600px;
+    height: 300px;
+}
+
+.modalContainerPoke {
+    display: flex;
+}
+
+
+.cardPoke {
+    display: flex;
+    object-fit: contain;
+}
+
+/* INICIO Card de Infomações do Pokemon lado Esquerdo */
+h2 {
+    background: whitesmoke;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+
+.containerPokeInfo {
+    display: flex;
+    background: grey;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.modalContainerPokeImg img {
+    display: flex;
+    object-fit: contain;
+}

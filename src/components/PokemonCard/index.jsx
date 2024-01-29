@@ -3,10 +3,29 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Box, Button, CardActionArea, CardActions } from '@mui/material';
+import { Box, CardActionArea } from '@mui/material';
 import '../../styles/Pokemon.css';
+import '../../styles/Modal.css';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 
 export default function PokemonCard({ name, image, types }) {
+    let subtitle;
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function afterOpenModal() {
+        // references are now sync'd and can be accessed.
+        subtitle.style.color = '#f00';
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
 
     const getTypeImage = (type) => {
         const imagePath = `${process.env.PUBLIC_URL}/assets/icons/${type}.png`;
@@ -15,11 +34,11 @@ export default function PokemonCard({ name, image, types }) {
         let spanText;
         switch (type) {
             default:
-                spanText = "Erro";
+                spanText = type;
                 break;
 
             case "bug":
-                spanText = "Terrestre";
+                spanText = "Inseto";
                 break;
 
             case "grass":
@@ -57,6 +76,30 @@ export default function PokemonCard({ name, image, types }) {
             case "fairy":
                 spanText = "Fada";
                 break;
+
+            case "ice":
+                spanText = "Gelo";
+                break;
+
+            case "steel":
+                spanText = "Aço";
+                break;
+
+            case "ghost":
+                spanText = "Fantasma";
+                break;
+
+            case "rock":
+                spanText = "Pedra";
+                break;
+
+            case "fighting":
+                spanText = "Lutador";
+                break;
+
+            case "psychic":
+                spanText = "Psiquico";
+                break;
         }
 
         return (
@@ -69,7 +112,38 @@ export default function PokemonCard({ name, image, types }) {
 
     return (
         <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea>
+            <div className='modalContainer'>
+                <Modal
+                    isOpen={modalIsOpen}
+                    onAfterOpen={afterOpenModal}
+                    onRequestClose={closeModal}
+                    className="modalPokemon"
+                    overlayClassName="modalOverlay"
+                    contentLabel="Modal Pokemon"
+                >
+                    <div className='modalContainerPokeImg'>
+                        <div className='containerPokeInfo'>
+                            <div className='namePoke'>
+                                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{name}</h2>
+                                <CardMedia
+                                    component="img"
+                                    height="120"
+                                    image={image}
+                                    alt={name}
+                                    classes={{ root: 'cardPoke' }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        Este Pokemon BLA BLA BLA
+                    </p>
+                    <div className='buttonContainer'>
+                        <button className='modalButton' onClick={closeModal}>Fechar</button>
+                    </div>
+                </Modal>
+            </div>
+            <CardActionArea onClick={openModal}>
                 <div className="thumbnailContainer">
                     <div className='imageContainer'>
                         <CardMedia className='imageContainer'

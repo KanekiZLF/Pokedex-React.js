@@ -235,3 +235,38 @@
     visibility: visible;
     opacity: 1;
 }
+
+/*Botoes */
+
+#finalButton {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+    button {
+        background: #3e88b3;
+        background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+        background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+        background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+        background: -o-linear-gradient(top, #3e779d, #65a9d7);
+        padding: 5px 10px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        box-shadow: rgb(255, 167, 248) 0 1px 0;
+        text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
+        color: white;
+        font-size: 16px;
+        vertical-align: middle;
+        border-style: none;
+        cursor: pointer;
+        }
+     button:hover {
+        background: rgb(40, 90, 123);
+        color: #ccc;
+        }
+     button:active {
+        border-top-color: #1b435e;
+        background: #1b435e;
+        }
+}
