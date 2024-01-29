@@ -136,7 +136,7 @@ export default function PokemonCard({ name, image, types }) {
                         </div>
                     </div>
                     <p>
-                        Este Pokemon BLA BLA BLA
+                        Ainda estou trabalhando nisso !
                     </p>
                     <div className='buttonContainer'>
                         <button className='modalButton' onClick={closeModal}>Fechar</button>

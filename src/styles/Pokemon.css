@@ -270,3 +270,47 @@
         background: #1b435e;
         }
 }
+
+/* ScrollToTop.css */
+
+/* Estilos para a imagem de seta para cima */
+#scrollToTop {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 76px;
+    right: 10px;
+    opacity: 70%;
+    transform: rotate(270deg);
+    cursor: pointer;
+    animation: fadeIn 1s;
+}
+
+/* Animação ao aparecer */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .7;
+    }
+}
+
+/* Animação ao desaparecer */
+@keyframes fadeOut {
+    0% {
+        opacity: .7;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#scrollToTop:hover {
+    opacity: 100%;
+}
+
+#scrollToTop.hidden {
+    animation: fadeOut 1s;
+    display: none;
+}

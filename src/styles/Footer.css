@@ -1,0 +1,26 @@
+/* Footer.css */
+
+#footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+#socialIcons {
+    img {
+        width: 55px;
+        margin-left: 10px;
+    }
+
+    img:hover {
+        cursor: pointer;
+    }
+}
+
+#aboutCreator {
+    align-items: flex-start;
+}
+  

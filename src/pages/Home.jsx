@@ -6,6 +6,8 @@ import Navbar from '../components/Navbar';
 import PokemonCard from '../components/PokemonCard';
 import { Skeletons } from '../components/Skeletons';
 import LoadMoreBT from '../components/Buttons/loadMore';
+import ScrollTop from '../components/Buttons/scrollToTop';
+import Footer from './Footer'
 
 export const Home = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -20,10 +22,13 @@ export const Home = () => {
   };
 
   const getPokemons = () => {
+    
     var endPoints = []
+
     for (var i = 1; i < value; i++) {
       endPoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`)
     }
+
     axios.all(endPoints.map((endPoint) => axios.get(endPoint))).then((res) => setPokemons(res));
   };
 
@@ -65,8 +70,10 @@ export const Home = () => {
         </Grid>
       </Container>
       <div id='finalButton'>
-        <LoadMoreBT updateNewValue={updateValue} />
+        <LoadMoreBT updateNewValue={updateValue} getPokemons={getPokemons} />
       </div>
+        <ScrollTop />
+        <Footer />
     </div>
   );
 };
