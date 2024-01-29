@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/Pokedex-React.js/static/css/main.6c8d37d6.css",
-    "main.js": "/Pokedex-React.js/static/js/main.595df284.js",
+    "main.css": "/Pokedex-React.js/static/css/main.8dbb917c.css",
+    "main.js": "/Pokedex-React.js/static/js/main.d574d081.js",
     "static/js/787.7e0b23c5.chunk.js": "/Pokedex-React.js/static/js/787.7e0b23c5.chunk.js",
     "static/media/pokemon-logo.png": "/Pokedex-React.js/static/media/pokemon-logo.db72c1e41ddb4c9e729e.png",
+    "static/media/arrowTop.png": "/Pokedex-React.js/static/media/arrowTop.ebf9d7a0fab98417d576.png",
+    "static/media/logo-github.svg": "/Pokedex-React.js/static/media/logo-github.96e1a905f51fb2480e6063f8f4ad75eb.svg",
     "index.html": "/Pokedex-React.js/index.html",
-    "main.6c8d37d6.css.map": "/Pokedex-React.js/static/css/main.6c8d37d6.css.map",
-    "main.595df284.js.map": "/Pokedex-React.js/static/js/main.595df284.js.map",
+    "static/media/logo-linkedin.svg": "/Pokedex-React.js/static/media/logo-linkedin.136c5baed96490f7fc2ce424d58c6c3f.svg",
+    "main.8dbb917c.css.map": "/Pokedex-React.js/static/css/main.8dbb917c.css.map",
+    "main.d574d081.js.map": "/Pokedex-React.js/static/js/main.d574d081.js.map",
     "787.7e0b23c5.chunk.js.map": "/Pokedex-React.js/static/js/787.7e0b23c5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6c8d37d6.css",
-    "static/js/main.595df284.js"
+    "static/css/main.8dbb917c.css",
+    "static/js/main.d574d081.js"
   ]
 }
